@@ -1,0 +1,34 @@
+#timestamp:2025-05-11 11:23:33 UTC
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapp-git2
+  namespace: default
+  labels:
+    app: nodeapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeapp
+  template:
+    metadata:
+      labels:
+        app: nodeapp
+    spec:
+      containers:
+      - name: eks-example
+        image: stephenwon/nodeapp-git-push:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
