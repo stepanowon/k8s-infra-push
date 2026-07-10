@@ -1,4 +1,4 @@
-#timestamp:2026-06-17 14:02:13 KST
+#timestamp:2026-07-10 10:51:43 KST
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: eks-example
-        image: stephenwon/nodeapp-git-push:1.0.0
+        image: stephenwon/nodeapp-git-push:1.0.1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
