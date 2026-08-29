@@ -1,4 +1,4 @@
-#timestamp:2026-08-28 21:08:07 KST
+#timestamp:2026-08-29 16:03:07 KST
 apiVersion: apps/v1
 kind: Deployment
 metadata:
